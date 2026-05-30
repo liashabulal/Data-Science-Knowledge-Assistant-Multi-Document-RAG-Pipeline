@@ -106,25 +106,25 @@ the constraint geometry explanation (sphere vs polyhedron) only visible at k=8.
 k=4 was more focused but missed relevant content for broad questions.
 
 **Why LCEL over RetrievalQA?**
-LangChain deprecated RetrievalQA in favor of the more composable and 
+LangChain deprecated RetrievalQA in favour of the more composable and 
 transparent LangChain Expression Language (LCEL) pipeline.
 
 ## Findings and limitations
 
 **What works well:**
-- Specific technical queries with clear constraints retrieve accurately
+- Specific technical queries with clear constraints are retrieved accurately
 - Cross-document synthesis works for well-defined topics
-- High-dimensional and regularization questions answered with precise citations
+- High-dimensional and regularisation questions answered with precise citations
 - HyDE significantly improves retrieval for broad interpretability questions
 
 **Known limitation — context scattering:**
-When an answer requires synthesizing information spread across multiple 
+When an answer requires synthesising information spread across multiple 
 chapters, standard retrieval sometimes misses relevant chunks. HyDE partially 
 addresses this. A more complete solution would involve query decomposition 
 or re-ranking — flagged as future work.
 
 **Known limitation — PDF extraction noise:**
-R code blocks in ISLR extract with character-level spacing artifacts 
+R code blocks in ISLR extract with character-level spacing artefacts 
 (e.g. `>A u t o [ 1 : 4 ,]`). This affects retrieval quality for 
 code-specific queries but not conceptual ones.
 
@@ -138,13 +138,6 @@ pip install langchain langchain-core langchain-google-genai \
 
 Add your Gemini API key as a Kaggle Secret named `GEMINI_API_KEY`.
 
-## Project structure
-ds-rag-assistant/
-├── notebook.ipynb        # full pipeline
-├── islr_faiss_index/     # saved FAISS index (not committed)
-│   ├── index.faiss
-│   └── index.pkl
-└── README.md
 
 ## Future work
 - RAGAS evaluation — formal scoring on faithfulness and answer relevancy
